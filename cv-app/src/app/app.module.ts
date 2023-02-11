@@ -9,6 +9,8 @@ import { ExpInfoComponent } from './exp-info/exp-info.component';
 import { EduInfoComponent } from './edu-info/edu-info.component';
 import { ResumeComponent } from './resume/resume.component';
 import { FinalComponent } from './final/final.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FinalComponent } from './final/final.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
