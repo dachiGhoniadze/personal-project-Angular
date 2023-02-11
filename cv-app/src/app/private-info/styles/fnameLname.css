@@ -1,0 +1,60 @@
+.form-name{
+    position: absolute;
+    left: 150px;
+    top: 165px;
+}
+
+.input-text-styles{
+    width: 371px;
+    height: 21px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+    
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    padding-bottom: 8px
+}
+
+
+
+
+.name-input-style{
+    box-sizing: border-box;
+
+    width: 371px;
+    height: 48px;
+
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+
+    margin-bottom: 8px
+}
+
+.form-surname{
+    position: absolute;
+    left: 553px;
+    top: 165px;
+}
+
+
+
+
+
+
+
+
+
+
+

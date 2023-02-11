@@ -1,1 +1,153 @@
-<p>private-info works!</p>
+<div class="container-private">
+      <header>
+            <button class='go-back-button'[routerLink]="['/home']"><img src = '../../assets/private-assets/Vector.png'></button>
+            <h1>პირადი ინფო</h1>
+            <hr>
+      </header>
+<br>
+ 
+
+      <form>
+            <div class="form-name">
+                  <label for="firstName" class = 'input-text-styles' >სახელი</label>
+                  <input 
+                    required 
+                    minlength="2" 
+                    pattern="[ა-ჰ]+"  
+                    ngModel 
+                    name="firstName"  
+                    #firstName="ngModel" 
+                    id="firstName"
+                    type="text" 
+                    class="form-control name-input-style" />   
+                  
+                  <div class = "form-control"                                                                                                                                                                                                                                                                                                                                       
+                   *ngIf = "firstName.touched  && !firstName.valid">
+                        <div *ngIf = "firstName.errors.required" class = 'validation-msg-fonts'>
+                              სავალდებულო
+                        </div>
+                        <div *ngIf = "firstName.errors.minlength" class = 'validation-msg-fonts'>
+                              მინიმუმ {{firstName.errors.minlength.requiredLength}} ასო
+                        </div>
+                        <div *ngIf = "firstName.errors.pattern" class = 'validation-msg-fonts'>
+                              მხოლოდ ქართული ასოები
+                        </div>
+                  </div>
+            </div>
+
+            <div class="form-surname">
+                  <label for="lastName" class="input-text-styles">გვარი</label>
+                  <input
+                    required
+                    minlength="2"
+                    pattern="[ა-ჰ]+"
+                    ngModel
+                    name = "lastName"
+                    #lastName="ngModel"
+                    id = "lastName"
+                    type = "text"
+                    class = "form-control name-input-style" />
+
+                    <div class = "form-control"                                                                                                                                                                                                                                                                                                                                        
+                    *ngIf = "lastName.touched  && !lastName.valid" >
+                         <div *ngIf = "lastName.errors.required" class = 'validation-msg-fonts'>
+                               სავალდებულო
+                         </div>
+                         <div *ngIf = "lastName.errors.minlength" class = 'validation-msg-fonts'>
+                               მინიმუმ {{lastName.errors.minlength.requiredLength}} ასო
+                         </div>
+                         <div *ngIf = "lastName.errors.pattern" class = 'validation-msg-fonts'>
+                               მხოლოდ ქართული ასოები
+                         </div>
+                   </div>
+
+            </div>
+  
+
+
+
+            
+            <div class = 'file-upload'>
+                  <label class = 'file-input'for="fileInput">პირადი ფოტოს ატვირთვა</label>
+                  <input 
+                  type="file" 
+                  class="form-control-file" 
+                  id="fileInput" 
+                  class = 'custom-file-input'
+                  required
+                  [(ngModel)]="fileUpload" 
+                  name="fileUpload"
+                  (change)="uploadFile()"
+                  (change)="fileSelected($event)"  />
+                  
+                  <div *ngIf="showMessage" class = 'validation-msg-fonts'>{{ message }}</div>
+                    
+
+            </div>
+
+            <img [src]="imageUrl" *ngIf="imageUrl"/>
+            
+            <div class="form-aboutMe">
+                  <label class="input-text-styles"  file-inputfor="details">ჩემ შესახებ (არასავალდებულო)</label>
+                  <textarea ngModel name="details" id="details" cols="30" rows="10" class="form-control area-style" placeholder="ზოგადი ინფო შენ შესახ"></textarea>
+            </div>
+
+
+            <div class="form-email">
+                  <label for = "email" class = 'input-text-styles'>ელ.ფოსტა</label>
+                  <input 
+
+                  type="email" 
+                  id="email" 
+                  required
+                  pattern="^[a-zA-Z0-9._%+-]+@redberry.ge$" 
+                  ngModel
+                  name = "email"
+                  #emails="ngModel" 
+                  class = "form-control email-input-style" />
+                  <div class = "form-control"                                                                                                                                                                                                                                                                                                                                       
+                  *ngIf = "emails.touched  && !emails.valid">
+                       <div *ngIf = "emails.errors.required" class = 'validation-msg-fonts'>
+                             სავალდებულო
+                       </div>
+                       <div *ngIf = "emails.errors.pattern" class = 'validation-msg-fonts'>
+                              უნდა მთავრდებოდეს @redberry.ge-ით
+                       </div>
+                 </div>
+
+            </div>
+
+            <div class="form-phone-number">
+                  <label for="number" class = 'input-text-styles'>მობილურის ნომერი</label>
+                  <input 
+                  type="tel"
+                  id="phone-num"
+                  required
+                  pattern="(\+995)[-. ]?[-. ]?(5)(\d{2}[-. ]?\d{3})[-. ]?\d{3}" 
+                  ngModel
+                  name = "number"
+                  #phone = "ngModel"
+                  class = "form-control email-input-style"/>
+                  
+                  <div class = "form-control"                                                                                                                                                                                                                                                                                                                                       
+                  *ngIf = "phone.touched  && !phone.valid">
+                       <div *ngIf = "phone.errors.required" class = 'validation-msg-fonts'>
+                             სავალდებულო
+                       </div>
+                       <div *ngIf = "phone.errors.pattern" class = 'validation-msg-fonts'>
+                              უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს 
+                       </div>
+                 </div>
+                  
+            </div>
+
+
+
+      
+      </form>
+      
+      <button class = "next" [routerLink]="['/exp-info']"><p>შემდეგი</p></button>
+
+      
+
+</div>

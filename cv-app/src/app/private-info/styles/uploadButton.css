@@ -1,0 +1,46 @@
+.file-upload{
+    position: absolute;
+    top: 325px;
+    left:150px;
+    width: 700px;
+    height: 27px;
+}
+.file-input{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    width: 232px;
+
+    color: #1A1A1A;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+
+    position: absolute;
+    left: 290px;
+    content: 'ატვირტვა';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 12px;
+    gap: 10px;
+    width: 107px;
+    height: 10px;
+
+    
+    background: #0E80BF;
+    border-radius: 4px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+
+  }

@@ -1,0 +1,107 @@
+.container-private{
+
+    width: 58%;
+    height: 100vh;
+}
+
+
+
+.form-aboutMe{
+    position: absolute;
+    top: 410px;
+    left: 126px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+    gap: 8px;
+}
+
+.area-style{
+
+box-sizing: border-box;
+
+width: 798px;
+height: 103px;
+
+background: #FFFFFF;
+border: 1px solid #BCBCBC;
+border-radius: 4px;
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 1;
+}
+
+
+.form-email{
+    position: absolute;
+    top: 585px;
+    left: 150px;
+}
+
+.email-input-style{
+    box-sizing: border-box;
+
+    width: 798px;
+    height: 48px;
+
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.validation-msg-fonts{
+    font-family: 'HelveticaLight';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 21px;
+}
+
+.form-phone-number{
+    position: absolute;
+    top: 700px;
+    left: 150px;
+}
+
+.next{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 33px;
+    gap: 20px;
+    
+    position: absolute;
+    width: 151px;
+    height: 48px;
+    right: 972px;
+    bottom: 65px;
+    border: none;
+    background: #6B40E3;
+    border-radius: 4px;
+}
+
+p{ 
+    width: 81px;
+    height: 20px;
+    
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+    
+}
