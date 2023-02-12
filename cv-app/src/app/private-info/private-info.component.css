@@ -1,10 +1,13 @@
-.container-private{
 
+.container {
+    width: 100%;
+    display: flex;
+  }
+  
+.container-private{
     width: 58%;
     height: 100vh;
 }
-
-
 
 .form-aboutMe{
     position: absolute;
@@ -107,3 +110,7 @@ p{
 }
 
 
+.resume{
+    width: 42%;
+
+  }

@@ -1,3 +1,4 @@
+<div class = "container">
 <div class="container-private">
       <header>
             <button class='go-back-button'[routerLink]="['/home']"><img src = '../../assets/private-assets/Vector.png'></button>
@@ -7,7 +8,7 @@
 <br>
  
 
-      <form>
+      <form  #form="ngForm">
             <div class="form-name">
                   <label for="firstName" class = 'input-text-styles' >სახელი</label>
                   <div class="input-flex-container">
@@ -18,6 +19,7 @@
                     ngModel 
                     name="firstName"  
                     #firstName="ngModel" 
+                    [(ngModel)]="user.name"
                     id="firstName"
                     type="text" 
                     class="form-control name-input-style" />  
@@ -51,6 +53,7 @@
                     ngModel
                     name = "lastName"
                     #lastName="ngModel"
+                    [(ngModel)]="user.surname"
                     id = "lastName"
                     type = "text"
                     class = "form-control name-input-style" />
@@ -87,7 +90,8 @@
                   id="fileInput" 
                   class = 'custom-file-input'
                   required
-                  [(ngModel)]="fileUpload" 
+                  [(ngModel)]="user.image"
+                  [(ngModel)]="fileUpload"
                   name="fileUpload"
                   (change)="uploadFile()"
                   (change)="fileSelected($event)"  />
@@ -97,11 +101,19 @@
 
             </div>
 
-            <img [src]="imageUrl" *ngIf="imageUrl"/>
+       
             
             <div class="form-aboutMe">
                   <label class="input-text-styles"  file-inputfor="details">ჩემ შესახებ (არასავალდებულო)</label>
-                  <textarea ngModel name="details" id="details" cols="30" rows="10" class="form-control area-style" placeholder="ზოგადი ინფო შენ შესახ"></textarea>
+                  <textarea 
+                  ngModel 
+                  name="details" 
+                  id="details" 
+                  #details = "ngModel"
+                  [(ngModel)]="user.about_me"
+                  cols="30" rows="10" 
+                  class="form-control area-style"
+                  placeholder="ზოგადი ინფო შენ შესახ"></textarea>
             </div>
 
 
@@ -116,6 +128,7 @@
                             ngModel
                             name = "email"
                             #emails="ngModel" 
+                            [(ngModel)]="user.email"
                             class = "form-control email-input-style"
                         />
                         <img 
@@ -147,6 +160,7 @@
                   ngModel
                   name = "number"
                   #phone = "ngModel"
+                  [(ngModel)]="user.phone_number"
                   class = "form-control email-input-style"/>
                   <img 
                   src="../../assets/private-assets/warning.png" 
@@ -167,13 +181,39 @@
                   
             </div>
 
-
-
-      
+            
+            <button type="submit"  class="next" [disabled]="!form.valid" (click)="submitForm()"><p>შემდეგი</p></button>
+            <!-- [routerLink]="['/exp-info']" -->
       </form>
+
+
+
+
+</div>
+
+<div class="resume">
+ 
+      <img src ='../../assets/resume-assets/logo.png' class = "circle">
       
-      <button class = "next" [routerLink]="['/exp-info']"><p>შემდეგი</p></button>
+      <img [src]="imageUrl" *ngIf="imageUrl" class = "profile-picture-position"/>
+
+
+      <h1 class = "resume-name-surname">{{user.name}} &nbsp; {{user.surname}}</h1>
+      <div class = "resume-email-div">
+            <img *ngIf="emails.touched"src = "../../assets/resume-assets/email.png">
+            <p class = "resume-email">&nbsp;&nbsp;{{user.email}}</p>
+      </div>
+      <div class = "resume-phone-div">
+            <img *ngIf="phone.touched"src = "../../assets/resume-assets/phone.png">
+            <p class = "resume-email">&nbsp;&nbsp;{{user.phone_number}}</p>
+      </div>
+
+      <div class = "aboutMe" *ngIf="details.dirty">
+            <p class = "about_me-p">ჩემ შესახებ</p>
+            <p class = "about-me-p-text">{{user.about_me}}</p>
+      </div>
 
       
+</div>
 
 </div>
