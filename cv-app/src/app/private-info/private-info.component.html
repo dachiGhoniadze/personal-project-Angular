@@ -20,6 +20,7 @@
                     name="firstName"  
                     #firstName="ngModel" 
                     [(ngModel)]="user.name"
+                    (ngModelChange)="updateLocalStorage()"
                     id="firstName"
                     type="text" 
                     class="form-control name-input-style" />  
@@ -54,6 +55,7 @@
                     name = "lastName"
                     #lastName="ngModel"
                     [(ngModel)]="user.surname"
+                    (ngModelChange)="updateLocalStorage()"
                     id = "lastName"
                     type = "text"
                     class = "form-control name-input-style" />
@@ -92,6 +94,7 @@
                   required
                   [(ngModel)]="user.image"
                   [(ngModel)]="fileUpload"
+                  (ngModelChange)="updateLocalStorage()"
                   name="fileUpload"
                   (change)="uploadFile()"
                   (change)="fileSelected($event)"  />
@@ -104,13 +107,14 @@
        
             
             <div class="form-aboutMe">
-                  <label class="input-text-styles"  file-inputfor="details">ჩემ შესახებ (არასავალდებულო)</label>
+                  <label class="input-text-styles"   for="details">ჩემ შესახებ (არასავალდებულო)</label>
                   <textarea 
                   ngModel 
                   name="details" 
                   id="details" 
                   #details = "ngModel"
                   [(ngModel)]="user.about_me"
+                  (ngModelChange)="updateLocalStorage()"
                   cols="30" rows="10" 
                   class="form-control area-style"
                   placeholder="ზოგადი ინფო შენ შესახ"></textarea>
@@ -129,6 +133,7 @@
                             name = "email"
                             #emails="ngModel" 
                             [(ngModel)]="user.email"
+                            (ngModelChange)="updateLocalStorage()"
                             class = "form-control email-input-style"
                         />
                         <img 
@@ -161,6 +166,7 @@
                   name = "number"
                   #phone = "ngModel"
                   [(ngModel)]="user.phone_number"
+                  (ngModelChange)="updateLocalStorage()"
                   class = "form-control email-input-style"/>
                   <img 
                   src="../../assets/private-assets/warning.png" 
@@ -182,8 +188,8 @@
             </div>
 
             
-            <button type="submit"  class="next" [disabled]="!form.valid" (click)="submitForm()"><p>შემდეგი</p></button>
-            <!-- [routerLink]="['/exp-info']" -->
+            <button [routerLink]="['/exp-info']" type="submit"  class="next" [disabled]="!form.valid" (click)="submitForm()"><p>შემდეგი</p></button>
+            
       </form>
 
 
@@ -208,7 +214,7 @@
             <p class = "resume-email">&nbsp;&nbsp;{{user.phone_number}}</p>
       </div>
 
-      <div class = "aboutMe" *ngIf="details.dirty">
+      <div class = "aboutMe" *ngIf="user.about_me">
             <p class = "about_me-p">ჩემ შესახებ</p>
             <p class = "about-me-p-text">{{user.about_me}}</p>
       </div>

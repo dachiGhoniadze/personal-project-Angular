@@ -17,11 +17,16 @@ export class PrivateInfoComponent implements OnInit{
   user: User = new User();
 
 
-  ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user')) || new User();
+  updateLocalStorage() {
+    localStorage.setItem('user', JSON.stringify(this.user));
   }
 
-
+  ngOnInit() {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      this.user = JSON.parse(storedUser);
+    }
+  }
 
   submitForm() {
     console.log(this.user);
