@@ -1,12 +1,17 @@
 <div class = "container">
 <div class="container-private">
-      <header>
-            <button class='go-back-button'[routerLink]="['/home']"><img src = '../../assets/private-assets/Vector.png'></button>
-            <h1>პირადი ინფო</h1>
-            <hr>
-      </header>
-<br>
- 
+
+      
+      <div class="left-half">
+            <header>
+              <button 
+                [routerLink]="['/home']" 
+                class = "button-go-to-home">
+              </button>
+              <h1>პირადი ინფო</h1>
+              <hr>
+            </header>
+            
 
       <form  #form="ngForm">
             <div class="form-name">
@@ -188,7 +193,12 @@
             </div>
 
             
-            <button [routerLink]="['/exp-info']" type="submit"  class="next" [disabled]="!form.valid" (click)="submitForm()"><p>შემდეგი</p></button>
+            <button [routerLink]="['/exp-info']" type="submit"  class="next-next" [disabled]="!form.valid" (click)="submitForm()"><p>შემდეგი</p></button>
+            
+
+
+              
+              
             
       </form>
 
