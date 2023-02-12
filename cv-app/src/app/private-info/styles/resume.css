@@ -1,0 +1,96 @@
+.circle{
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: 1176px;
+    top: 994px;
+
+}
+
+.resume-name-surname{
+    width:400px;
+    left: 1178px;
+    top: 75px;
+
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 42px;
+    /* identical to box height */
+
+
+    color: #F93B1D;
+}
+
+
+.resume-email-div{
+    position: absolute;
+    width: 300px;
+    height: 21px;
+    left: 1178px;
+    top: 127px;
+    display: flex;
+}
+.resume-email{
+    
+    
+    font-family: 'HelveticaLight';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    width: 300px;
+    /* off black */
+    
+    color: #1A1A1A; 
+}
+.resume-phone-div{
+    position: absolute;
+    width: 300px;
+    height: 21px;
+    left: 1178px;
+    top: 155px;
+    display: flex;
+}
+
+
+
+
+.profile-picture-position{
+    position: absolute;
+    top: 100px;
+    left: 1800px;
+}
+.aboutMe{
+    position: absolute;
+    top: 200px;
+   left: 1178px;
+    width: 300px;
+}
+.about_me-p{
+    width: 150px;
+    font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+
+.about-me-p-text{
+    white-space: pre-wrap;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* or 138% */
+    
+    text-transform: lowercase;
+    
+    color: #000000;
+}
