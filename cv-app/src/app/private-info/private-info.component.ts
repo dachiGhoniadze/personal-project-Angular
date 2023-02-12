@@ -1,12 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { privateInfo } from './private-info.model';
+import { User } from './private-info.model';
 
 @Component({
   selector: 'app-private-info',
   templateUrl: './private-info.component.html',
-  styleUrls: ['./private-info.component.css','./styles/header.css','./styles/fnameLname.css','./styles/uploadButton.css']
+  styleUrls: ['./private-info.component.css','./styles/header.css','./styles/fnameLname.css','./styles/uploadButton.css','./styles/resume.css']
 })
-export class PrivateInfoComponent {
+
+
+
+export class PrivateInfoComponent implements OnInit{
+  
+
+  user: User = new User();
+
+
+  ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user')) || new User();
+  }
+
+
+
+  submitForm() {
+    console.log(this.user);
+  }
+
+
+
   fileUpload: File;
   showMessage = false;
   message = '';
@@ -29,5 +51,7 @@ export class PrivateInfoComponent {
   fileSelected(event) {
     this.fileUpload = event.target.files[0];
     this.imageUrl = URL.createObjectURL(this.fileUpload);
+    this.message = `ფოტო "${this.fileUpload.name}" აიტვირთა.`;
+    this.showMessage = true;
   }
 }
