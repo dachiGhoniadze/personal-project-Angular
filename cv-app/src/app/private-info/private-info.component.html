@@ -10,6 +10,7 @@
       <form>
             <div class="form-name">
                   <label for="firstName" class = 'input-text-styles' >სახელი</label>
+                  <div class="input-flex-container">
                   <input 
                     required 
                     minlength="2" 
@@ -19,8 +20,13 @@
                     #firstName="ngModel" 
                     id="firstName"
                     type="text" 
-                    class="form-control name-input-style" />   
-                  
+                    class="form-control name-input-style" />  
+                    <img 
+                    src="../../assets/private-assets/warning.png" 
+                    class="warning-image" 
+                    *ngIf="firstName.touched && !firstName.valid"
+                /> 
+            </div>
                   <div class = "form-control"                                                                                                                                                                                                                                                                                                                                       
                    *ngIf = "firstName.touched  && !firstName.valid">
                         <div *ngIf = "firstName.errors.required" class = 'validation-msg-fonts'>
@@ -37,6 +43,7 @@
 
             <div class="form-surname">
                   <label for="lastName" class="input-text-styles">გვარი</label>
+                  <div class = "input-flex-container">
                   <input
                     required
                     minlength="2"
@@ -47,7 +54,12 @@
                     id = "lastName"
                     type = "text"
                     class = "form-control name-input-style" />
-
+                    <img 
+                    src="../../assets/private-assets/warning.png" 
+                    class="warning-image" 
+                    *ngIf="lastName.touched && !lastName.valid"
+                />
+            </div>
                     <div class = "form-control"                                                                                                                                                                                                                                                                                                                                        
                     *ngIf = "lastName.touched  && !lastName.valid" >
                          <div *ngIf = "lastName.errors.required" class = 'validation-msg-fonts'>
@@ -93,18 +105,25 @@
             </div>
 
 
-            <div class="form-email">
+            <div class="form-email" >
                   <label for = "email" class = 'input-text-styles'>ელ.ფოსტა</label>
-                  <input 
-
-                  type="email" 
-                  id="email" 
-                  required
-                  pattern="^[a-zA-Z0-9._%+-]+@redberry.ge$" 
-                  ngModel
-                  name = "email"
-                  #emails="ngModel" 
-                  class = "form-control email-input-style" />
+                  <div class="input-flex-container">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            required
+                            pattern="^[a-zA-Z0-9._%+-]+@redberry.ge$" 
+                            ngModel
+                            name = "email"
+                            #emails="ngModel" 
+                            class = "form-control email-input-style"
+                        />
+                        <img 
+                            src="../../assets/private-assets/warning.png" 
+                            class="warning-image" 
+                            *ngIf="emails.touched && !emails.valid"
+                        />
+                      </div>
                   <div class = "form-control"                                                                                                                                                                                                                                                                                                                                       
                   *ngIf = "emails.touched  && !emails.valid">
                        <div *ngIf = "emails.errors.required" class = 'validation-msg-fonts'>
@@ -119,23 +138,30 @@
 
             <div class="form-phone-number">
                   <label for="number" class = 'input-text-styles'>მობილურის ნომერი</label>
+                  <div class = "input-flex-container">
                   <input 
                   type="tel"
                   id="phone-num"
                   required
-                  pattern="(\+995)[-. ]?[-. ]?(5)(\d{2}[-. ]?\d{3})[-. ]?\d{3}" 
+                  pattern="^\+995\s5\d{2}\s\d{2}\s\d{2}\s\d{2}$" 
                   ngModel
                   name = "number"
                   #phone = "ngModel"
                   class = "form-control email-input-style"/>
-                  
-                  <div class = "form-control"                                                                                                                                                                                                                                                                                                                                       
+                  <img 
+                  src="../../assets/private-assets/warning.png" 
+                  class="warning-image" 
+                  *ngIf="phone.touched && !phone.valid"
+              />
+            </div>
+            
+            <div class = "form-control"                                                                                                                                                                                                                                                                                                                                       
                   *ngIf = "phone.touched  && !phone.valid">
                        <div *ngIf = "phone.errors.required" class = 'validation-msg-fonts'>
                              სავალდებულო
                        </div>
                        <div *ngIf = "phone.errors.pattern" class = 'validation-msg-fonts'>
-                              უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს 
+                              უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს (+995 5** ** ** **)
                        </div>
                  </div>
                   
