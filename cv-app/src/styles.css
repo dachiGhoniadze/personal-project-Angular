@@ -19,7 +19,44 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+
 @font-face {
 	font-family: 'Helvetica Neue';
+	src: url('./assets/fonts/HelveticaNeue-Bold-02.ttf');
+  }
+
+  @font-face {
+	font-family: 'Helvetica';
 	src: url('./assets/fonts/HelveticaNeue-01.ttf');
+  }
+
+  @font-face {
+	font-family: 'HelveticaLight';
+	src: url('./assets/fonts/HelveticaNeue-Light-08.ttf');
+  }
+
+  .input-flex-container {
+    display: flex;  
+    align-items: center;
+    justify-content: first baseline;
+  }
+  
+  .warning-image {
+    order: 1;
+    margin-left: 12px;
+  }
+
+
+input.form-control.ng-valid {
+	border: 1px solid green;
+	background-image: url('./assets/private-assets/check.png');
+	background-repeat: no-repeat;
+	background-position: right 15px center;
+  }
+  
+  input.form-control.ng-touched.ng-invalid {
+	border: 1px solid #EF5050;
+
+	background-repeat: no-repeat;
+	background-position: right 15px center;
   }
